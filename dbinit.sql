@@ -1,3 +1,4 @@
+USE kr;
 CREATE TABLE persons (
 	persons_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     persons_firstname VARCHAR(100) NOT NULL,
@@ -17,18 +18,23 @@ CREATE TABLE skills (
 );
 CREATE TABLE skills_to_persons ( -- there is a many to many relationship between skills and people, Steve and Ken both know python, for instance
 	skills_to_persons_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    skills_id INT NOT NULL,
     FOREIGN KEY (skills_id) REFERENCES skills(skills_id),
+    persons_id INT NOT NULL,
     FOREIGN KEY (persons_id) REFERENCES persons(persons_id)
 );
 CREATE TABLE positions ( -- a position is for a company and held by a person
 	positions_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     positions_title VARCHAR(255) NOT NULL,
+    companies_id INT NOT NULL, -- but are all positions for a company, really?
     FOREIGN KEY (companies_id) REFERENCES companies(companies_id),
+    persons_id INT NOT NULL,
     FOREIGN KEY (persons_id) REFERENCES persons(persons_id)
 );
 CREATE TABLE positions_notes ( -- positions can have many notes
 	positions_notes_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     positions_notes_text TEXT NOT NULL,
+    positions_id INT NOT NULL,
     FOREIGN KEY (positions_id) REFERENCES positions(positions_id)
 );
 CREATE TABLE accolades (
@@ -37,6 +43,8 @@ CREATE TABLE accolades (
 );
 CREATE TABLE accolades_to_people ( -- many people can have many accolades
 	accolades_to_people_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    accolades_id INT NOT NULL,
     FOREIGN KEY (accolades_id) REFERENCES accolades(accolades_id),
+    persons_id INT NOT NULL,
     FOREIGN KEY (persons_id) REFERENCES persons(persons_id)
 );
