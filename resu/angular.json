@@ -26,6 +26,31 @@
         }
       }
     },
+    "entity-validators": {
+      "projectType": "library",
+      "root": "libs/entity-validators",
+      "sourceRoot": "libs/entity-validators/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/entity-validators"],
+          "options": {
+            "jestConfig": "libs/entity-validators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/entity-validators/src/**/*.ts",
+              "libs/entity-validators/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "resutron": {
       "projectType": "application",
       "root": "apps/resutron",

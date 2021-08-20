@@ -30,6 +30,9 @@
     "entity-types": {
       "tags": []
     },
+    "entity-validators": {
+      "tags": []
+    },
     "resutron": {
       "tags": []
     },

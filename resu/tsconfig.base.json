@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@resu/entity-types": ["libs/entity-types/src/index.ts"]
+      "@resu/entity-types": ["libs/entity-types/src/index.ts"],
+      "@resu/entity-validators": ["libs/entity-validators/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
