@@ -31,3 +31,12 @@ CREATE TABLE positions_notes ( -- positions can have many notes
     positions_notes_text TEXT NOT NULL,
     FOREIGN KEY (positions_id) REFERENCES positions(positions_id)
 );
+CREATE TABLE accolades (
+	accolades_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    accolades_name VARCHAR(100)
+);
+CREATE TABLE accolades_to_people ( -- many people can have many accolades
+	accolades_to_people_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (accolades_id) REFERENCES accolades(accolades_id),
+    FOREIGN KEY (persons_id) REFERENCES persons(persons_id)
+);
