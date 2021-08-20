@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "entity-types": {
+      "tags": []
+    },
     "resutron": {
       "tags": []
     },

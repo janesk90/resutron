@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "entity-types": {
+      "projectType": "library",
+      "root": "libs/entity-types",
+      "sourceRoot": "libs/entity-types/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/entity-types"],
+          "options": {
+            "jestConfig": "libs/entity-types/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/entity-types/src/**/*.ts",
+              "libs/entity-types/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "resutron": {
       "projectType": "application",
       "root": "apps/resutron",
