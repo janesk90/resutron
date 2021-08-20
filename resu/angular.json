@@ -51,6 +51,56 @@
         }
       }
     },
+    "reserver": {
+      "root": "apps/reserver",
+      "sourceRoot": "apps/reserver/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/reserver",
+            "main": "apps/reserver/src/main.ts",
+            "tsConfig": "apps/reserver/tsconfig.app.json",
+            "assets": ["apps/reserver/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/reserver/src/environments/environment.ts",
+                  "with": "apps/reserver/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "reserver:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/reserver/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/reserver"],
+          "options": {
+            "jestConfig": "apps/reserver/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "resutron": {
       "projectType": "application",
       "root": "apps/resutron",
