@@ -39,7 +39,7 @@ CREATE TABLE positions_notes ( -- positions can have many notes
 );
 CREATE TABLE accolades (
 	accolades_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    accolades_name VARCHAR(100)
+    accolades_name VARCHAR(100) NOT NULL
 );
 CREATE TABLE accolades_to_people ( -- many people can have many accolades
 	accolades_to_people_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

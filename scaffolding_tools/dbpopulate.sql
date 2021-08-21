@@ -72,3 +72,4 @@ INSERT INTO skills (skills_name) VALUES ("Waterfall");
 INSERT INTO skills (skills_name) VALUES ("Web Services");
 INSERT INTO skills (skills_name) VALUES ("Written Communication");
 INSERT INTO skills (skills_name) VALUES ("XML");
+INSERT INTO persons (persons_firstname, persons_middlename, persons_lastname, persons_phone) VALUES ("Kenneth", "Steven", "Janes", "1-609-923-5266");
