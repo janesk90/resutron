@@ -1,13 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'mysql';
+import { Persons as PersonType } from '@resu/entity-types';
 
 @NgModule({
   imports: [CommonModule],
 })
 class BaseDAO {
   identity!: string;
-  shit = "SELECT * FROM ? WHERE ? = ?";
+  get(id: Int16Array) {
+    // SELECT * FROM ? WHERE ? = ?;
+  }
+  put() {
+    // UPDATE 
+  }
+  post() {
+
+  }
+  delete(id: Int16Array) {
+    // DELETE FROM ? WHERE ? = ?;
+  }
 }
 export class Accolades extends BaseDAO {
   identity = 'accolades_id';

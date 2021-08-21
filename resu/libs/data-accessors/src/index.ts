@@ -1,1 +1,1 @@
-export * from './lib/data-accessors.module';
+export * from './lib/mysql-data-accessors.module';
