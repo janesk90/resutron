@@ -119,11 +119,17 @@ notes = [["""Participate in a scrum/agile team""",
 counter = 1
 for i in notes:
 	for j in i:
-		phrases.append("""INSERT INTO positions_notes (positions_notes_text, positions_id) VALUES ("{0}",{1});""".format(j, counter))
+		phrases.append("""INSERT INTO position_notes (position_notes_text, positions_id) VALUES ("{0}",{1});""".format(j, counter))
 	counter += 1;
 counter = 1
 for i in l:
 	phrases.append("""INSERT INTO skills_to_persons (skills_id, persons_id) VALUES ({0},1);""".format(counter))
 	counter += 1
+for i in ['Diploma', 'Degree', 'Award', 'Induction', 'Certification']:
+	phrases.append("""INSERT INTO accolade_types (accolade_types_name) VALUES ('{0}');""".format(i))
+for i,j in [('Master of Science, Computer Science',2), ('Bachelor of Science, Computer Science',2), ('Upsilon Pi Epsilon Member',4), ("Dean's List",3)]:
+	phrases.append("""INSERT INTO accolades (accolades_name, accolade_types_id) VALUES ("{0}",{1});""".format(i,j))
+
+
 for p in phrases:
 	print(p)

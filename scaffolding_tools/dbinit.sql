@@ -33,15 +33,21 @@ CREATE TABLE positions ( -- a position is for a company and held by a person
     persons_id INT NOT NULL,
     FOREIGN KEY (persons_id) REFERENCES persons(persons_id)
 );
-CREATE TABLE positions_notes ( -- positions can have many notes
-	positions_notes_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    positions_notes_text TEXT NOT NULL,
+CREATE TABLE position_notes ( -- positions can have many notes
+	position_notes_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    position_notes_text TEXT NOT NULL,
     positions_id INT NOT NULL,
     FOREIGN KEY (positions_id) REFERENCES positions(positions_id)
 );
+CREATE TABLE accolade_types (
+	accolade_types_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    accolade_types_name VARCHAR(100) NOT NULL
+);
 CREATE TABLE accolades (
 	accolades_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    accolades_name VARCHAR(100) NOT NULL
+    accolades_name VARCHAR(100) NOT NULL,
+    accolade_types_id INT NOT NULL,
+    FOREIGN KEY (accolade_types_id) REFERENCES accolade_types(accolade_types_id)
 );
 CREATE TABLE accolades_to_people ( -- many people can have many accolades
 	accolades_to_people_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
