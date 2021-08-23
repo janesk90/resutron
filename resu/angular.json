@@ -247,6 +247,7 @@
     }
   },
   "cli": {
+    "analytics": "c60eaaa3-c17e-4c54-a710-e38990c2cb99",
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {

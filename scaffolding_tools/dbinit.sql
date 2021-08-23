@@ -26,6 +26,8 @@ CREATE TABLE skills_to_persons ( -- there is a many to many relationship between
 CREATE TABLE positions ( -- a position is for a company and held by a person
 	positions_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     positions_title VARCHAR(255) NOT NULL,
+    positions_start DATE NOT NULL,
+    positions_end DATE NOT NULL,
     companies_id INT NOT NULL, -- but are all positions for a company, really?
     FOREIGN KEY (companies_id) REFERENCES companies(companies_id),
     persons_id INT NOT NULL,
