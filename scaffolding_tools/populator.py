@@ -129,7 +129,8 @@ for i in ['Diploma', 'Degree', 'Award', 'Induction', 'Certification']:
 	phrases.append("""INSERT INTO accolade_types (accolade_types_name) VALUES ('{0}');""".format(i))
 for i,j in [('Master of Science, Computer Science',2), ('Bachelor of Science, Computer Science',2), ('Upsilon Pi Epsilon Member',4), ("Dean's List",3)]:
 	phrases.append("""INSERT INTO accolades (accolades_name, accolade_types_id) VALUES ("{0}",{1});""".format(i,j))
-
+for i in [1,2,3,4]:
+	phrases.append("""INSERT INTO accolades_to_persons (accolades_id, persons_id) VALUES ({0},1);""".format(i))
 
 for p in phrases:
 	print(p)

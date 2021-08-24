@@ -49,7 +49,7 @@ CREATE TABLE accolades (
     accolade_types_id INT NOT NULL,
     FOREIGN KEY (accolade_types_id) REFERENCES accolade_types(accolade_types_id)
 );
-CREATE TABLE accolades_to_people ( -- many people can have many accolades
+CREATE TABLE accolades_to_persons ( -- many people can have many accolades
 	accolades_to_people_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     accolades_id INT NOT NULL,
     FOREIGN KEY (accolades_id) REFERENCES accolades(accolades_id),
