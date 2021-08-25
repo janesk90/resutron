@@ -27,9 +27,6 @@
     ]
   },
   "projects": {
-    "data-accessors": {
-      "tags": []
-    },
     "entity-types": {
       "tags": []
     },

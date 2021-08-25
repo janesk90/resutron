@@ -1,31 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "data-accessors": {
-      "projectType": "library",
-      "root": "libs/data-accessors",
-      "sourceRoot": "libs/data-accessors/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/data-accessors"],
-          "options": {
-            "jestConfig": "libs/data-accessors/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/data-accessors/src/**/*.ts",
-              "libs/data-accessors/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "entity-types": {
       "projectType": "library",
       "root": "libs/entity-types",
