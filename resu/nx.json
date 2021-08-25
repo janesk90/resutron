@@ -27,10 +27,31 @@
     ]
   },
   "projects": {
+    "accolade-types": {
+      "tags": []
+    },
+    "accolades": {
+      "tags": []
+    },
+    "accolades-to-persons": {
+      "tags": []
+    },
+    "companies": {
+      "tags": []
+    },
     "entity-types": {
       "tags": []
     },
     "entity-validators": {
+      "tags": []
+    },
+    "persons": {
+      "tags": []
+    },
+    "positions": {
+      "tags": []
+    },
+    "positions-notes": {
       "tags": []
     },
     "reserver": {
@@ -42,6 +63,12 @@
     "resutron-e2e": {
       "tags": [],
       "implicitDependencies": ["resutron"]
+    },
+    "skills": {
+      "tags": []
+    },
+    "skills-to-persons": {
+      "tags": []
     }
   }
 }

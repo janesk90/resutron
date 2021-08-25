@@ -1,6 +1,106 @@
 {
   "version": 1,
   "projects": {
+    "accolade-types": {
+      "projectType": "library",
+      "root": "libs/accolade-types",
+      "sourceRoot": "libs/accolade-types/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accolade-types"],
+          "options": {
+            "jestConfig": "libs/accolade-types/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accolade-types/src/**/*.ts",
+              "libs/accolade-types/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "accolades": {
+      "projectType": "library",
+      "root": "libs/accolades",
+      "sourceRoot": "libs/accolades/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accolades"],
+          "options": {
+            "jestConfig": "libs/accolades/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accolades/src/**/*.ts",
+              "libs/accolades/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "accolades-to-persons": {
+      "projectType": "library",
+      "root": "libs/accolades-to-persons",
+      "sourceRoot": "libs/accolades-to-persons/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accolades-to-persons"],
+          "options": {
+            "jestConfig": "libs/accolades-to-persons/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accolades-to-persons/src/**/*.ts",
+              "libs/accolades-to-persons/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "companies": {
+      "projectType": "library",
+      "root": "libs/companies",
+      "sourceRoot": "libs/companies/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/companies"],
+          "options": {
+            "jestConfig": "libs/companies/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/companies/src/**/*.ts",
+              "libs/companies/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "entity-types": {
       "projectType": "library",
       "root": "libs/entity-types",
@@ -46,6 +146,81 @@
             "lintFilePatterns": [
               "libs/entity-validators/src/**/*.ts",
               "libs/entity-validators/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "persons": {
+      "projectType": "library",
+      "root": "libs/persons",
+      "sourceRoot": "libs/persons/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/persons"],
+          "options": {
+            "jestConfig": "libs/persons/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/persons/src/**/*.ts",
+              "libs/persons/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "positions": {
+      "projectType": "library",
+      "root": "libs/positions",
+      "sourceRoot": "libs/positions/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/positions"],
+          "options": {
+            "jestConfig": "libs/positions/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/positions/src/**/*.ts",
+              "libs/positions/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "positions-notes": {
+      "projectType": "library",
+      "root": "libs/positions-notes",
+      "sourceRoot": "libs/positions-notes/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/positions-notes"],
+          "options": {
+            "jestConfig": "libs/positions-notes/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/positions-notes/src/**/*.ts",
+              "libs/positions-notes/src/**/*.html"
             ]
           }
         }
@@ -216,6 +391,56 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/resutron-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "skills": {
+      "projectType": "library",
+      "root": "libs/skills",
+      "sourceRoot": "libs/skills/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/skills"],
+          "options": {
+            "jestConfig": "libs/skills/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/skills/src/**/*.ts",
+              "libs/skills/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "skills-to-persons": {
+      "projectType": "library",
+      "root": "libs/skills-to-persons",
+      "sourceRoot": "libs/skills-to-persons/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/skills-to-persons"],
+          "options": {
+            "jestConfig": "libs/skills-to-persons/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/skills-to-persons/src/**/*.ts",
+              "libs/skills-to-persons/src/**/*.html"
+            ]
           }
         }
       }
