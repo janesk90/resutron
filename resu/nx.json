@@ -39,6 +39,9 @@
     "companies": {
       "tags": []
     },
+    "data-access": {
+      "tags": []
+    },
     "entity-types": {
       "tags": []
     },
@@ -55,6 +58,9 @@
       "tags": []
     },
     "reserver": {
+      "tags": []
+    },
+    "resume-entity": {
       "tags": []
     },
     "resutron": {

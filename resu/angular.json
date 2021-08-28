@@ -101,6 +101,31 @@
         }
       }
     },
+    "data-access": {
+      "projectType": "library",
+      "root": "libs/data-access",
+      "sourceRoot": "libs/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access"],
+          "options": {
+            "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data-access/src/**/*.ts",
+              "libs/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "entity-types": {
       "projectType": "library",
       "root": "libs/entity-types",
@@ -272,6 +297,31 @@
           "options": {
             "jestConfig": "apps/reserver/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "resume-entity": {
+      "projectType": "library",
+      "root": "libs/resume-entity",
+      "sourceRoot": "libs/resume-entity/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/resume-entity"],
+          "options": {
+            "jestConfig": "libs/resume-entity/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/resume-entity/src/**/*.ts",
+              "libs/resume-entity/src/**/*.html"
+            ]
           }
         }
       }

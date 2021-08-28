@@ -4,11 +4,14 @@
  */
 
 import * as express from 'express';
+import {MySQLDataAccessorModule, Persons} from '../../../libs/resume-entity/src/lib/resume-entity.module';
 
 const app = express();
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to reserver!' });
+app.get('/api', async (req, res) => {
+  let mdao = new MySQLDataAccessorModule<Persons>({host: 'localhost',user: 'root',password: 'root',database: 'kr'});
+    let x = await mdao.getOne(1);
+    res.send(x);
 });
 
 const port = process.env.port || 3333;

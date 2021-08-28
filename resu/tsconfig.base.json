@@ -19,11 +19,13 @@
       "@resu/accolades": ["libs/accolades/src/index.ts"],
       "@resu/accolades-to-persons": ["libs/accolades-to-persons/src/index.ts"],
       "@resu/companies": ["libs/companies/src/index.ts"],
+      "@resu/data-access": ["libs/data-access/src/index.ts"],
       "@resu/entity-types": ["libs/entity-types/src/index.ts"],
       "@resu/entity-validators": ["libs/entity-validators/src/index.ts"],
       "@resu/persons": ["libs/persons/src/index.ts"],
       "@resu/positions": ["libs/positions/src/index.ts"],
       "@resu/positions-notes": ["libs/positions-notes/src/index.ts"],
+      "@resu/resume-entity": ["libs/resume-entity/src/index.ts"],
       "@resu/skills": ["libs/skills/src/index.ts"],
       "@resu/skills-to-persons": ["libs/skills-to-persons/src/index.ts"]
     },
