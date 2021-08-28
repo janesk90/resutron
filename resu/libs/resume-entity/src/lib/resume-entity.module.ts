@@ -170,9 +170,9 @@ export interface DataAccessor<T extends EntityProps> {
   
   updateMany(es: T[]): Promise<T[]>;
   
-  removeOne(id: Int16Array): Promise<T>;
+  removeOne(id: number): Promise<T>;
   
-  removeMany(ids: Int16Array[]): Promise<T[]>;
+  removeMany(ids: number[]): Promise<T[]>;
   */
 }
 
