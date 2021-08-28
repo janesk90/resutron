@@ -46,6 +46,7 @@
     "node-mysql": "^0.4.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "util": "^0.12.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

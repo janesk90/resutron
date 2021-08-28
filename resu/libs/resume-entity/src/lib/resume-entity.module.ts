@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Connection, createConnection, Query, ConnectionOptions} from 'mysql2';
 import { promisify } from 'util';
+import { Connection, createConnection, Query, ConnectionOptions } from 'mysql2';
 
 @NgModule({
   imports: [CommonModule],
@@ -10,6 +10,9 @@ export class ResumeEntityModule {
 
 }
 // -----
+export interface EntityProps {
+
+}
 interface AccoladeTypesProps {
 
 }
@@ -22,7 +25,7 @@ interface AccoladesToPersonsProps {
 interface CompaniesProps {
 
 }
-interface PersonsProps {
+export interface PersonsProps extends EntityProps {
   persons_id: number;
   persons_firstname: string;
   persons_middlename?: string;
@@ -41,6 +44,24 @@ interface SkillsProps {
 interface SkillsToPersonsProps {
 
 }
+
+export abstract class ResEntity<E extends EntityProps> {
+	props: E;
+	constructor(props: E) {
+		this.props = props
+	}
+}
+
+export class ResEnt<E> {
+  props: E;
+  constructor(props: E) {
+    this.props = props;
+  }
+}
+
+export class PersEnt extends ResEnt<PersonsProps> {
+
+}
 // -----
 export abstract class ResumeEntity {
   props: any;
@@ -51,7 +72,7 @@ export abstract class ResumeEntity {
   }
   getKeys() {
     const ks = [];
-    for(let k in this.props) {
+    for (let k in this.props) {
       ks.push(k);
     }
     return ks;
@@ -88,53 +109,29 @@ export interface DataAccessor<T extends ResumeEntity> {
   */
 }
 
-export class MySQLDataAccessorModule<T extends ResumeEntity> implements DataAccessor<ResumeEntity> {
-  connection!: Connection;
-  t: any;
-  constructor(connectionConfig: ConnectionOptions) {
+export class MST<E> {
+  connection: Connection;
+  table_name: string;
+  unique_identifier: string;
+  constructor(connectionConfig: ConnectionOptions, t: string, u: string) {
     this.connection = createConnection(connectionConfig);
-    this.t = typeof ResumeEntity;
+    this.table_name = t;
+    this.unique_identifier = u;
   }
-  async getOne(id: number): Promise<T> {
-    let q ="SELECT * FROM ?? WHERE ?? = ?;";
+  async getOne(id: number): Promise<E> {
+    let q = "SELECT * FROM ?? WHERE ?? = ?;";
     const query = promisify(this.connection.query).bind(this.connection);
     try {
-    let r: any = await query({sql:q, values:['persons', 'persons_id', id]})
-    if(!(r.result)) {
-      return r;
+      let r: E[] = await query({ sql: q, values: [this.table_name, this.unique_identifier, id] })
+      if (!r) {
+        throw Error("entity not found");
+      }
+      let p = r[0];
+      return p;
     }
-    let p = r.result[0];
-    let d: any = {};
-    for(let k of p) {
-      d[k] = p[k];
-    }
-    return new this.t(d); }
     catch (x) {
       throw x;
     }
   }
-  /*
-  getMany(ids: Int16Array[]): Promise<T[]> {
-    "SELECT * FROM ?? WHERE ?? IN ?;"
-  }
-  createOne(e: T): Promise<T> {
-    "INSERT INTO ?? ?? VALUES ?;"
-  }
-  createMany(es: T[]): Promise<T[]> {
-    "INSERT INTO ?? ?? VALUES ?;"
-  }
-  updateOne(e: T): Promise<T> {
-
-  }
-  updateMany(es: T[]): Promise<T[]> {
-
-  }
-  removeOne(id: Int16Array): Promise<T> {
-
-  }
-  removeMany(ids: Int16Array[]): Promise<T[]> {
-
-  }
-  */
 }
 // -----

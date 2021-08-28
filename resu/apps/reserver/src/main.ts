@@ -4,13 +4,18 @@
  */
 
 import * as express from 'express';
-import {MySQLDataAccessorModule, Persons} from '../../../libs/resume-entity/src/lib/resume-entity.module';
+import {MySQLDataAccessorModule, Persons, MST, PersonsProps} from '../../../libs/resume-entity/src/lib/resume-entity.module';
 
 const app = express();
 
-app.get('/api', async (req, res) => {
-  let mdao = new MySQLDataAccessorModule<Persons>({host: 'localhost',user: 'root',password: 'root',database: 'kr'});
-    let x = await mdao.getOne(1);
+app.get('/api/:endpoint/:id', async (req, res) => {
+  let d = {
+    persons: 'persons_id',
+    positions: 'positions_id',
+
+  };
+  let mdao = new MST<PersonsProps>({host: 'localhost',user: 'root',password: 'root',database: 'kr'}, req.params.endpoint, d[req.params.endpoint]);
+    let x = await mdao.getOne(parseInt(req.params.id));
     res.send(x);
 });
 
