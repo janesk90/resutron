@@ -3,6 +3,8 @@
  * This is only a minimal backend to get started.
  */
 
+ var bodyParser = require('body-parser')
+
 import * as express from 'express';
 import { AccoladesDAO, AccoladesToPersonsDAO, AccoladeTypesDAO, CompaniesDAO, PersonsDAO, PositionNotesDAO, PositionsDAO, SkillsDAO, SkillsToPersonsDAO } from '../../../libs/resume-entity/src/lib/resume-entity.module';
 
@@ -19,6 +21,7 @@ let endpointMap = {
 };
 
 const app = express();
+app.use(bodyParser.json())
 
 app.get('/api/:endpoint', async (req, res) => {
   let mdao = new endpointMap[req.params.endpoint]({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
@@ -34,6 +37,20 @@ app.get('/api/:endpoint/:id', async (req, res) => {
   } else {
     x = await mdao.getAll();
   }
+  res.send(x);
+});
+
+app.post('/api/:endpoint', async (req, res) => {
+  let mdao = new endpointMap[req.params.endpoint]({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  //res.send(req.body);
+  let x = await mdao.createOne(req.body);
+  res.send(x);
+});
+
+app.delete('/api/:endpoint/:id', async (req, res) => {
+  let mdao = new endpointMap[req.params.endpoint]({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x: any;
+  x = await mdao.removeOne(parseInt(req.params.id));
   res.send(x);
 });
 

@@ -263,3 +263,6 @@ INSERT INTO accolades_to_persons (accolades_id, persons_id) VALUES (1,1);
 INSERT INTO accolades_to_persons (accolades_id, persons_id) VALUES (2,1);
 INSERT INTO accolades_to_persons (accolades_id, persons_id) VALUES (3,1);
 INSERT INTO accolades_to_persons (accolades_id, persons_id) VALUES (4,1);
+DELETE FROM position_notes WHERE position_notes_id IN (27, 28, 31);
+UPDATE position_notes SET position_notes_text = "Design/implement teaching materials to be used at various colleges, including example solutions to various approaches which tackle the traveling salesperson problem and Sudoku" WHERE position_notes_id = 26;
+UPDATE position_notes SET position_notes_text = "Object-oriented programming, introductory programming courses, low level architecture design, discrete mathematics" WHERE position_notes_id = 30;

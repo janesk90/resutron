@@ -12,32 +12,32 @@ export class ResumeEntityModule {
 // -----
 interface EntityProps { }
 interface AccoladeTypesProps {
-  accolade_types_id: number;
+  readonly accolade_types_id?: number;
   accolade_types_name: string;
 }
 interface AccoladesProps {
-  accolades_id: number;
+  readonly accolades_id?: number;
   accolades_name: string;
   accolade_types_id: number;
 }
 interface AccoladesToPersonsProps {
-  accolades_to_persons_id: number;
+  readonly accolades_to_persons_id?: number;
   accolades_id: number;
   persons_id: number;
 }
 interface CompaniesProps {
-  companies_id: number;
+  readonly companies_id?: number;
   companies_name: string;
 }
 interface PersonsProps extends EntityProps {
-  persons_id: number;
+  readonly persons_id?: number;
   persons_firstname: string;
   persons_middlename?: string;
   persons_lastname: string;
   persons_phone: string;
 }
 interface PositionsProps {
-  positions_id: number;
+  readonly positions_id?: number;
   positions_title: string;
   positions_start: Date;
   positions_end: Date;
@@ -45,22 +45,22 @@ interface PositionsProps {
   persons_id: number;
 }
 interface PositionNotesProps {
-  position_notes_id: number;
+  readonly position_notes_id?: number;
   position_notes_text: string;
   positions_id: number;
 }
 interface SkillsProps {
-  skills_id: number;
+  readonly skills_id?: number;
   skills_name: string;
 }
 interface SkillsToPersonsProps {
-  skills_to_persons_id: number;
+  readonly skills_to_persons_id?: number;
   skills_id: number;
   persons_id: number;
 }
 
 class AccoladeTypes implements AccoladeTypesProps {
-  accolade_types_id: number;
+  readonly accolade_types_id?: number;
   accolade_types_name: string;
   constructor(p: AccoladeTypesProps) {
     this.accolade_types_id = p.accolade_types_id;
@@ -68,7 +68,7 @@ class AccoladeTypes implements AccoladeTypesProps {
   }
 }
 class Accolades implements AccoladesProps {
-  accolades_id: number;
+  readonly accolades_id?: number;
   accolades_name: string;
   accolade_types_id: number;
   constructor(p: AccoladesProps) {
@@ -78,7 +78,7 @@ class Accolades implements AccoladesProps {
   }
 }
 class AccoladesToPersons implements AccoladesToPersonsProps {
-  accolades_to_persons_id: number;
+  readonly accolades_to_persons_id?: number;
   accolades_id: number;
   persons_id: number;
   constructor(p: AccoladesToPersonsProps) {
@@ -88,7 +88,7 @@ class AccoladesToPersons implements AccoladesToPersonsProps {
   }
 }
 class Companies implements CompaniesProps {
-  companies_id: number;
+  readonly companies_id?: number;
   companies_name: string;
   constructor(p: CompaniesProps) {
     this.companies_id = p.companies_id;
@@ -96,7 +96,7 @@ class Companies implements CompaniesProps {
   }
 }
 class Persons implements PersonsProps {
-  persons_id: number;
+  readonly persons_id?: number;
   persons_firstname: string;
   persons_middlename?: string;
   persons_lastname: string;
@@ -110,7 +110,7 @@ class Persons implements PersonsProps {
   }
 }
 class Positions implements PositionsProps {
-  positions_id: number;
+  readonly positions_id?: number;
   positions_title: string;
   positions_start: Date;
   positions_end: Date;
@@ -126,7 +126,7 @@ class Positions implements PositionsProps {
   }
 }
 class PositionNotes implements PositionNotesProps {
-  position_notes_id: number;
+  readonly position_notes_id?: number;
   position_notes_text: string;
   positions_id: number;
   constructor(p: PositionNotesProps) {
@@ -136,7 +136,7 @@ class PositionNotes implements PositionNotesProps {
   }
 }
 class Skills implements SkillsProps {
-  skills_id: number;
+  readonly skills_id?: number;
   skills_name: string;
   constructor(p: SkillsProps) {
     this.skills_id = p.skills_id;
@@ -144,7 +144,7 @@ class Skills implements SkillsProps {
   }
 }
 class SkillsToPersons implements SkillsToPersonsProps {
-  skills_to_persons_id: number;
+  readonly skills_to_persons_id?: number;
   skills_id: number;
   persons_id: number;
   constructor(p: SkillsToPersonsProps) {
@@ -161,19 +161,19 @@ export interface DataAccessor<T extends EntityProps> {
   getOne(id: number): Promise<T>;
   
   getMany(ids: number[]): Promise<T[]>;
-  /*
+  
   createOne(e: T): Promise<T>;
   
-  createMany(es: T[]): Promise<T[]>;
+  // createMany(es: T[]): Promise<T[]>;
   
-  updateOne(e: T): Promise<T>;
+  //updateOne(e: T): Promise<T>;
   
-  updateMany(es: T[]): Promise<T[]>;
+  //updateMany(es: T[]): Promise<T[]>;
   
   removeOne(id: number): Promise<T>;
   
-  removeMany(ids: number[]): Promise<T[]>;
-  */
+  //removeMany(ids: number[]): Promise<T[]>;
+  
 }
 
 export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
@@ -190,7 +190,7 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     let q = "SELECT * FROM ??;";
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T[] = await query({ sql: q, values: [this.entity_name] })
+      let r: T[] = await query({ sql: q, values: [this.entity_name] });
       if (!r) {
         throw Error("entity not found");
       }
@@ -231,6 +231,39 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
       throw x;
     }
   }
+
+  async createOne(e: T): Promise<T> {
+    let q = "INSERT INTO ?? SET ?;"
+    let query = promisify(this.connection.query).bind(this.connection);
+    try {
+      let r = await query({sql: q, values: [this.entity_name, e]});
+      return this.getOne(r.insertId);
+    } catch (x) {
+      throw x;
+    }
+  }
+
+  async removeOne(id: number): Promise<T> {
+    let q = "DELETE FROM ?? WHERE ?? = ?;"
+    let query = promisify(this.connection.query).bind(this.connection);
+    try {
+      let r: T = await this.getOne(id);
+      try {
+        let x = await query({ sql: q, values: [this.entity_name, this.unique_identifier, id] });
+        if(x.affectedRows == 1) {
+          return r;
+        }
+        else {
+          throw new Error("did not affect exactly 1 row");
+        }
+      } catch (x) {
+        throw x;
+      }
+    }
+    catch (x) {
+      throw x;
+    }
+  }
 }
 export class AccoladesDAO extends DAO<Accolades> {
   constructor(connectionConfig: ConnectionOptions) {
@@ -246,7 +279,7 @@ export class AccoladeTypesDAO extends DAO<AccoladeTypes> {
     this.unique_identifier = 'accolade_types_id';
   }
 }
-export class AccoladesToPersonsDAO extends DAO<AccoladeTypes> {
+export class AccoladesToPersonsDAO extends DAO<AccoladesToPersons> {
   constructor(connectionConfig: ConnectionOptions) {
     super(connectionConfig);
     this.entity_name = 'accolades_to_persons';
