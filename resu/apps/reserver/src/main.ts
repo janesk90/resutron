@@ -40,6 +40,13 @@ app.get('/api/:endpoint/:id', async (req, res) => {
   res.send(x);
 });
 
+app.put('/api/:endpoint', async (req, res) => {
+  let mdao = new endpointMap[req.params.endpoint]({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  //res.send(req.body);
+  let x = await mdao.updateOne(req.body);
+  res.send(x);
+});
+
 app.post('/api/:endpoint', async (req, res) => {
   let mdao = new endpointMap[req.params.endpoint]({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
   //res.send(req.body);
