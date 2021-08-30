@@ -27,35 +27,29 @@
     ]
   },
   "projects": {
-    "accolade-types": {
-      "tags": []
+    "accolade-types-domain": {
+      "tags": ["domain:accolade-types", "type:domain-logic"]
     },
-    "accolades": {
-      "tags": []
+    "accolades-domain": {
+      "tags": ["domain:accolades", "type:domain-logic"]
     },
-    "accolades-to-persons": {
-      "tags": []
+    "accolades-to-persons-domain": {
+      "tags": ["domain:accolades-to-persons", "type:domain-logic"]
     },
-    "companies": {
-      "tags": []
-    },
-    "data-access": {
-      "tags": []
-    },
-    "entity-types": {
-      "tags": []
+    "companies-domain": {
+      "tags": ["domain:companies", "type:domain-logic"]
     },
     "entity-validators": {
       "tags": []
     },
-    "persons": {
-      "tags": []
+    "persons-domain": {
+      "tags": ["domain:persons", "type:domain-logic"]
     },
-    "positions": {
-      "tags": []
+    "position-notes-domain": {
+      "tags": ["domain:position-notes", "type:domain-logic"]
     },
-    "positions-notes": {
-      "tags": []
+    "positions-domain": {
+      "tags": ["domain:positions", "type:domain-logic"]
     },
     "reserver": {
       "tags": []
@@ -70,11 +64,11 @@
       "tags": [],
       "implicitDependencies": ["resutron"]
     },
-    "skills": {
-      "tags": []
+    "skills-domain": {
+      "tags": ["domain:skills", "type:domain-logic"]
     },
-    "skills-to-persons": {
-      "tags": []
+    "skills-to-persons-domain": {
+      "tags": ["domain:skills-to-persons", "type:domain-logic"]
     }
   }
 }

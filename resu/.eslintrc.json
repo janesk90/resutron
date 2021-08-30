@@ -65,6 +65,69 @@
                 "onlyDependOnLibsWithTags": [
                   "domain:shared"
                 ]
+              },
+              {
+                "sourceTag": "domain:accolade-types",
+                "onlyDependOnLibsWithTags": [
+                  "domain:accolade-types",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:accolades",
+                "onlyDependOnLibsWithTags": [
+                  "domain:accolades",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:accolades-to-persons",
+                "onlyDependOnLibsWithTags": [
+                  "domain:accolades-to-persons",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:companies",
+                "onlyDependOnLibsWithTags": [
+                  "domain:companies",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:persons",
+                "onlyDependOnLibsWithTags": [
+                  "domain:persons",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:position-notes",
+                "onlyDependOnLibsWithTags": [
+                  "domain:position-notes",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:positions",
+                "onlyDependOnLibsWithTags": [
+                  "domain:positions",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:skills",
+                "onlyDependOnLibsWithTags": [
+                  "domain:skills",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:skills-to-persons",
+                "onlyDependOnLibsWithTags": [
+                  "domain:skills-to-persons",
+                  "domain:shared"
+                ]
               }
             ]
           }

@@ -1,17 +1,37 @@
 {
   "version": 1,
   "projects": {
-    "accolade-types": {
+    "accolade-types-domain": {
       "projectType": "library",
-      "root": "libs/accolade-types",
-      "sourceRoot": "libs/accolade-types/src",
-      "prefix": "resu",
+      "root": "libs/accolade-types/domain",
+      "sourceRoot": "libs/accolade-types/domain/src",
+      "prefix": "accolade-types",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/accolade-types/domain"
+          ],
+          "options": {
+            "project": "libs/accolade-types/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/accolade-types/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/accolade-types/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/accolade-types"],
+          "outputs": [
+            "coverage/libs/accolade-types/domain"
+          ],
           "options": {
-            "jestConfig": "libs/accolade-types/jest.config.js",
+            "jestConfig": "libs/accolade-types/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -19,24 +39,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/accolade-types/src/**/*.ts",
-              "libs/accolade-types/src/**/*.html"
+              "libs/accolade-types/domain/src/**/*.ts",
+              "libs/accolade-types/domain/src/**/*.html"
             ]
           }
         }
       }
     },
-    "accolades": {
+    "accolades-domain": {
       "projectType": "library",
-      "root": "libs/accolades",
-      "sourceRoot": "libs/accolades/src",
-      "prefix": "resu",
+      "root": "libs/accolades/domain",
+      "sourceRoot": "libs/accolades/domain/src",
+      "prefix": "accolades",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/accolades/domain"
+          ],
+          "options": {
+            "project": "libs/accolades/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/accolades/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/accolades/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/accolades"],
+          "outputs": [
+            "coverage/libs/accolades/domain"
+          ],
           "options": {
-            "jestConfig": "libs/accolades/jest.config.js",
+            "jestConfig": "libs/accolades/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -44,24 +84,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/accolades/src/**/*.ts",
-              "libs/accolades/src/**/*.html"
+              "libs/accolades/domain/src/**/*.ts",
+              "libs/accolades/domain/src/**/*.html"
             ]
           }
         }
       }
     },
-    "accolades-to-persons": {
+    "accolades-to-persons-domain": {
       "projectType": "library",
-      "root": "libs/accolades-to-persons",
-      "sourceRoot": "libs/accolades-to-persons/src",
-      "prefix": "resu",
+      "root": "libs/accolades-to-persons/domain",
+      "sourceRoot": "libs/accolades-to-persons/domain/src",
+      "prefix": "accolades-to-persons",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/accolades-to-persons/domain"
+          ],
+          "options": {
+            "project": "libs/accolades-to-persons/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/accolades-to-persons/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/accolades-to-persons/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/accolades-to-persons"],
+          "outputs": [
+            "coverage/libs/accolades-to-persons/domain"
+          ],
           "options": {
-            "jestConfig": "libs/accolades-to-persons/jest.config.js",
+            "jestConfig": "libs/accolades-to-persons/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -69,24 +129,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/accolades-to-persons/src/**/*.ts",
-              "libs/accolades-to-persons/src/**/*.html"
+              "libs/accolades-to-persons/domain/src/**/*.ts",
+              "libs/accolades-to-persons/domain/src/**/*.html"
             ]
           }
         }
       }
     },
-    "companies": {
+    "companies-domain": {
       "projectType": "library",
-      "root": "libs/companies",
-      "sourceRoot": "libs/companies/src",
-      "prefix": "resu",
+      "root": "libs/companies/domain",
+      "sourceRoot": "libs/companies/domain/src",
+      "prefix": "companies",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/companies/domain"
+          ],
+          "options": {
+            "project": "libs/companies/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/companies/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/companies/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/companies"],
+          "outputs": [
+            "coverage/libs/companies/domain"
+          ],
           "options": {
-            "jestConfig": "libs/companies/jest.config.js",
+            "jestConfig": "libs/companies/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -94,58 +174,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/companies/src/**/*.ts",
-              "libs/companies/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "data-access": {
-      "projectType": "library",
-      "root": "libs/data-access",
-      "sourceRoot": "libs/data-access/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/data-access"],
-          "options": {
-            "jestConfig": "libs/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/data-access/src/**/*.ts",
-              "libs/data-access/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "entity-types": {
-      "projectType": "library",
-      "root": "libs/entity-types",
-      "sourceRoot": "libs/entity-types/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/entity-types"],
-          "options": {
-            "jestConfig": "libs/entity-types/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/entity-types/src/**/*.ts",
-              "libs/entity-types/src/**/*.html"
+              "libs/companies/domain/src/**/*.ts",
+              "libs/companies/domain/src/**/*.html"
             ]
           }
         }
@@ -159,7 +189,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/entity-validators"],
+          "outputs": [
+            "coverage/libs/entity-validators"
+          ],
           "options": {
             "jestConfig": "libs/entity-validators/jest.config.js",
             "passWithNoTests": true
@@ -176,17 +208,37 @@
         }
       }
     },
-    "persons": {
+    "persons-domain": {
       "projectType": "library",
-      "root": "libs/persons",
-      "sourceRoot": "libs/persons/src",
-      "prefix": "resu",
+      "root": "libs/persons/domain",
+      "sourceRoot": "libs/persons/domain/src",
+      "prefix": "persons",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/persons/domain"
+          ],
+          "options": {
+            "project": "libs/persons/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/persons/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/persons/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/persons"],
+          "outputs": [
+            "coverage/libs/persons/domain"
+          ],
           "options": {
-            "jestConfig": "libs/persons/jest.config.js",
+            "jestConfig": "libs/persons/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -194,24 +246,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/persons/src/**/*.ts",
-              "libs/persons/src/**/*.html"
+              "libs/persons/domain/src/**/*.ts",
+              "libs/persons/domain/src/**/*.html"
             ]
           }
         }
       }
     },
-    "positions": {
+    "position-notes-domain": {
       "projectType": "library",
-      "root": "libs/positions",
-      "sourceRoot": "libs/positions/src",
-      "prefix": "resu",
+      "root": "libs/position-notes/domain",
+      "sourceRoot": "libs/position-notes/domain/src",
+      "prefix": "position-notes",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/position-notes/domain"
+          ],
+          "options": {
+            "project": "libs/position-notes/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/position-notes/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/position-notes/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/positions"],
+          "outputs": [
+            "coverage/libs/position-notes/domain"
+          ],
           "options": {
-            "jestConfig": "libs/positions/jest.config.js",
+            "jestConfig": "libs/position-notes/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -219,24 +291,44 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/positions/src/**/*.ts",
-              "libs/positions/src/**/*.html"
+              "libs/position-notes/domain/src/**/*.ts",
+              "libs/position-notes/domain/src/**/*.html"
             ]
           }
         }
       }
     },
-    "positions-notes": {
+    "positions-domain": {
       "projectType": "library",
-      "root": "libs/positions-notes",
-      "sourceRoot": "libs/positions-notes/src",
-      "prefix": "resu",
+      "root": "libs/positions/domain",
+      "sourceRoot": "libs/positions/domain/src",
+      "prefix": "positions",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/positions/domain"
+          ],
+          "options": {
+            "project": "libs/positions/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/positions/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/positions/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/positions-notes"],
+          "outputs": [
+            "coverage/libs/positions/domain"
+          ],
           "options": {
-            "jestConfig": "libs/positions-notes/jest.config.js",
+            "jestConfig": "libs/positions/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -244,8 +336,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/positions-notes/src/**/*.ts",
-              "libs/positions-notes/src/**/*.html"
+              "libs/positions/domain/src/**/*.ts",
+              "libs/positions/domain/src/**/*.html"
             ]
           }
         }
@@ -258,12 +350,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/reserver",
             "main": "apps/reserver/src/main.ts",
             "tsConfig": "apps/reserver/tsconfig.app.json",
-            "assets": ["apps/reserver/src/assets"]
+            "assets": [
+              "apps/reserver/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -288,12 +384,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/reserver/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/reserver/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/reserver"],
+          "outputs": [
+            "coverage/apps/reserver"
+          ],
           "options": {
             "jestConfig": "apps/reserver/jest.config.js",
             "passWithNoTests": true
@@ -309,7 +409,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/resume-entity"],
+          "outputs": [
+            "coverage/libs/resume-entity"
+          ],
           "options": {
             "jestConfig": "libs/resume-entity/jest.config.js",
             "passWithNoTests": true
@@ -334,7 +436,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/resutron",
             "index": "apps/resutron/src/index.html",
@@ -346,7 +450,9 @@
               "apps/resutron/src/favicon.ico",
               "apps/resutron/src/assets"
             ],
-            "styles": ["apps/resutron/src/styles.scss"],
+            "styles": [
+              "apps/resutron/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -411,7 +517,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/resutron"],
+          "outputs": [
+            "coverage/apps/resutron"
+          ],
           "options": {
             "jestConfig": "apps/resutron/jest.config.js",
             "passWithNoTests": true
@@ -440,47 +548,44 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/resutron-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "skills": {
-      "projectType": "library",
-      "root": "libs/skills",
-      "sourceRoot": "libs/skills/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/skills"],
-          "options": {
-            "jestConfig": "libs/skills/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
             "lintFilePatterns": [
-              "libs/skills/src/**/*.ts",
-              "libs/skills/src/**/*.html"
+              "apps/resutron-e2e/**/*.{js,ts}"
             ]
           }
         }
       }
     },
-    "skills-to-persons": {
+    "skills-domain": {
       "projectType": "library",
-      "root": "libs/skills-to-persons",
-      "sourceRoot": "libs/skills-to-persons/src",
-      "prefix": "resu",
+      "root": "libs/skills/domain",
+      "sourceRoot": "libs/skills/domain/src",
+      "prefix": "skills",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/skills/domain"
+          ],
+          "options": {
+            "project": "libs/skills/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/skills/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/skills/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/skills-to-persons"],
+          "outputs": [
+            "coverage/libs/skills/domain"
+          ],
           "options": {
-            "jestConfig": "libs/skills-to-persons/jest.config.js",
+            "jestConfig": "libs/skills/domain/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -488,8 +593,53 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/skills-to-persons/src/**/*.ts",
-              "libs/skills-to-persons/src/**/*.html"
+              "libs/skills/domain/src/**/*.ts",
+              "libs/skills/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "skills-to-persons-domain": {
+      "projectType": "library",
+      "root": "libs/skills-to-persons/domain",
+      "sourceRoot": "libs/skills-to-persons/domain/src",
+      "prefix": "skills-to-persons",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/skills-to-persons/domain"
+          ],
+          "options": {
+            "project": "libs/skills-to-persons/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/skills-to-persons/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/skills-to-persons/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/skills-to-persons/domain"
+          ],
+          "options": {
+            "jestConfig": "libs/skills-to-persons/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/skills-to-persons/domain/src/**/*.ts",
+              "libs/skills-to-persons/domain/src/**/*.html"
             ]
           }
         }
