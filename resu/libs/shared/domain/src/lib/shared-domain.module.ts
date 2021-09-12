@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { promisify } from 'util';
 import { Connection, createConnection, ConnectionOptions } from 'mysql2';
+// @ts-ignore
+import { promisify } from 'util';
 
 @NgModule({
   imports: [CommonModule],
