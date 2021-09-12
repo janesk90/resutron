@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
 import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { UiSkillsDisplayComponentComponent } from './ui-skills-display-component/ui-skills-display-component.component';
 
 @NgModule({
   imports: [CommonModule],
+  declarations: [
+    UiSkillsDisplayComponentComponent
+  ],
 })
 export class SkillsDomainModule {}
 export interface SkillsProps {

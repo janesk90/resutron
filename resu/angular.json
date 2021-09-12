@@ -9,9 +9,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/accolade-types/domain"
-          ],
+          "outputs": ["dist/libs/accolade-types/domain"],
           "options": {
             "project": "libs/accolade-types/domain/ng-package.json"
           },
@@ -27,9 +25,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/accolade-types/domain"
-          ],
+          "outputs": ["coverage/libs/accolade-types/domain"],
           "options": {
             "jestConfig": "libs/accolade-types/domain/jest.config.js",
             "passWithNoTests": true
@@ -54,9 +50,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/accolades/domain"
-          ],
+          "outputs": ["dist/libs/accolades/domain"],
           "options": {
             "project": "libs/accolades/domain/ng-package.json"
           },
@@ -72,9 +66,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/accolades/domain"
-          ],
+          "outputs": ["coverage/libs/accolades/domain"],
           "options": {
             "jestConfig": "libs/accolades/domain/jest.config.js",
             "passWithNoTests": true
@@ -99,9 +91,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/accolades-to-persons/domain"
-          ],
+          "outputs": ["dist/libs/accolades-to-persons/domain"],
           "options": {
             "project": "libs/accolades-to-persons/domain/ng-package.json"
           },
@@ -117,9 +107,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/accolades-to-persons/domain"
-          ],
+          "outputs": ["coverage/libs/accolades-to-persons/domain"],
           "options": {
             "jestConfig": "libs/accolades-to-persons/domain/jest.config.js",
             "passWithNoTests": true
@@ -144,9 +132,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/companies/domain"
-          ],
+          "outputs": ["dist/libs/companies/domain"],
           "options": {
             "project": "libs/companies/domain/ng-package.json"
           },
@@ -162,9 +148,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/companies/domain"
-          ],
+          "outputs": ["coverage/libs/companies/domain"],
           "options": {
             "jestConfig": "libs/companies/domain/jest.config.js",
             "passWithNoTests": true
@@ -181,60 +165,6 @@
         }
       }
     },
-    "domain": {
-      "projectType": "library",
-      "root": "libs/domain",
-      "sourceRoot": "libs/domain/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain"
-          ],
-          "options": {
-            "jestConfig": "libs/domain/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/domain/src/**/*.ts",
-              "libs/domain/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "entity-validators": {
-      "projectType": "library",
-      "root": "libs/entity-validators",
-      "sourceRoot": "libs/entity-validators/src",
-      "prefix": "resu",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/entity-validators"
-          ],
-          "options": {
-            "jestConfig": "libs/entity-validators/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/entity-validators/src/**/*.ts",
-              "libs/entity-validators/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "persons-domain": {
       "projectType": "library",
       "root": "libs/persons/domain",
@@ -243,9 +173,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/persons/domain"
-          ],
+          "outputs": ["dist/libs/persons/domain"],
           "options": {
             "project": "libs/persons/domain/ng-package.json"
           },
@@ -261,9 +189,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/persons/domain"
-          ],
+          "outputs": ["coverage/libs/persons/domain"],
           "options": {
             "jestConfig": "libs/persons/domain/jest.config.js",
             "passWithNoTests": true
@@ -288,9 +214,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/position-notes/domain"
-          ],
+          "outputs": ["dist/libs/position-notes/domain"],
           "options": {
             "project": "libs/position-notes/domain/ng-package.json"
           },
@@ -306,9 +230,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/position-notes/domain"
-          ],
+          "outputs": ["coverage/libs/position-notes/domain"],
           "options": {
             "jestConfig": "libs/position-notes/domain/jest.config.js",
             "passWithNoTests": true
@@ -333,9 +255,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/positions/domain"
-          ],
+          "outputs": ["dist/libs/positions/domain"],
           "options": {
             "project": "libs/positions/domain/ng-package.json"
           },
@@ -351,9 +271,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/positions/domain"
-          ],
+          "outputs": ["coverage/libs/positions/domain"],
           "options": {
             "jestConfig": "libs/positions/domain/jest.config.js",
             "passWithNoTests": true
@@ -377,16 +295,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/reserver",
             "main": "apps/reserver/src/main.ts",
             "tsConfig": "apps/reserver/tsconfig.app.json",
-            "assets": [
-              "apps/reserver/src/assets"
-            ]
+            "assets": ["apps/reserver/src/assets"]
           },
           "configurations": {
             "production": {
@@ -411,16 +325,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/reserver/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/reserver/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/reserver"
-          ],
+          "outputs": ["coverage/apps/reserver"],
           "options": {
             "jestConfig": "apps/reserver/jest.config.js",
             "passWithNoTests": true
@@ -436,9 +346,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/resume-entity"
-          ],
+          "outputs": ["coverage/libs/resume-entity"],
           "options": {
             "jestConfig": "libs/resume-entity/jest.config.js",
             "passWithNoTests": true
@@ -463,9 +371,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/resutron",
             "index": "apps/resutron/src/index.html",
@@ -477,9 +383,7 @@
               "apps/resutron/src/favicon.ico",
               "apps/resutron/src/assets"
             ],
-            "styles": [
-              "apps/resutron/src/styles.scss"
-            ],
+            "styles": ["apps/resutron/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -519,10 +423,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "resutron:build:production"
+              "browserTarget": "resutron:build:production",
+              "proxyConfig": "./apps/resutron/src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "resutron:build:development"
+              "browserTarget": "resutron:build:development",
+              "proxyConfig": "./apps/resutron/src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -544,9 +450,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/resutron"
-          ],
+          "outputs": ["coverage/apps/resutron"],
           "options": {
             "jestConfig": "apps/resutron/jest.config.js",
             "passWithNoTests": true
@@ -575,54 +479,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/resutron-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "shared-domain": {
-      "projectType": "library",
-      "root": "libs/shared/domain",
-      "sourceRoot": "libs/shared/domain/src",
-      "prefix": "shared",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/domain"
-          ],
-          "options": {
-            "project": "libs/shared/domain/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/domain/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/shared/domain/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/domain"
-          ],
-          "options": {
-            "jestConfig": "libs/shared/domain/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/domain/src/**/*.ts",
-              "libs/shared/domain/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/resutron-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -635,9 +492,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/skills/domain"
-          ],
+          "outputs": ["dist/libs/skills/domain"],
           "options": {
             "project": "libs/skills/domain/ng-package.json"
           },
@@ -653,9 +508,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/skills/domain"
-          ],
+          "outputs": ["coverage/libs/skills/domain"],
           "options": {
             "jestConfig": "libs/skills/domain/jest.config.js",
             "passWithNoTests": true
@@ -680,9 +533,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/skills-to-persons/domain"
-          ],
+          "outputs": ["dist/libs/skills-to-persons/domain"],
           "options": {
             "project": "libs/skills-to-persons/domain/ng-package.json"
           },
@@ -698,9 +549,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/skills-to-persons/domain"
-          ],
+          "outputs": ["coverage/libs/skills-to-persons/domain"],
           "options": {
             "jestConfig": "libs/skills-to-persons/domain/jest.config.js",
             "passWithNoTests": true

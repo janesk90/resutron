@@ -39,12 +39,6 @@
     "companies-domain": {
       "tags": ["domain:companies", "type:domain-logic"]
     },
-    "domain": {
-      "tags": []
-    },
-    "entity-validators": {
-      "tags": []
-    },
     "persons-domain": {
       "tags": ["domain:persons", "type:domain-logic"]
     },
@@ -66,9 +60,6 @@
     "resutron-e2e": {
       "tags": [],
       "implicitDependencies": ["resutron"]
-    },
-    "shared-domain": {
-      "tags": ["domain:shared", "type:domain-logic"]
     },
     "skills-domain": {
       "tags": ["domain:skills", "type:domain-logic"]
