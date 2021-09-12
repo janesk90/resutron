@@ -6,7 +6,15 @@
  var bodyParser = require('body-parser')
 
 import * as express from 'express';
-import { AccoladesDAO, AccoladesToPersonsDAO, AccoladeTypesDAO, CompaniesDAO, PersonsDAO, PositionNotesDAO, PositionsDAO, SkillsDAO, SkillsToPersonsDAO } from '../../../libs/resume-entity/src/lib/resume-entity.module';
+import { AccoladeTypesDAO } from '@resu/accolade-types/domain';
+import { AccoladesDAO } from '@resu/accolades/domain';
+import { AccoladesToPersonsDAO } from '@resu/accolades-to-persons/domain';
+import { CompaniesDAO } from '@resu/companies/domain';
+import { PersonsDAO } from '@resu/persons/domain';
+import { PositionsDAO } from '@resu/positions/domain';
+import { PositionNotesDAO } from '@resu/position-notes/domain';
+import { SkillsDAO } from '@resu/skills/domain';
+import { SkillsToPersonsDAO } from '@resu/skills-to-persons/domain';
 
 let endpointMap = {
   accolade_types: AccoladeTypesDAO,

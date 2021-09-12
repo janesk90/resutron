@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'resume-entity',
-  preset: '../../jest.preset.js',
+  displayName: 'shared-domain',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/resume-entity',
+  coverageDirectory: '../../../coverage/libs/shared/domain',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

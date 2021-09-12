@@ -128,6 +128,13 @@
                   "domain:skills-to-persons",
                   "domain:shared"
                 ]
+              },
+              {
+                "sourceTag": "domain:shared",
+                "onlyDependOnLibsWithTags": [
+                  "domain:shared",
+                  "domain:shared"
+                ]
               }
             ]
           }
