@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
 import { DAO } from  '../../../../shared/domain/src/lib/shared-domain.module';
+import { UiPersonDisplayComponentComponent } from './ui-person-display-component/ui-person-display-component.component';
 
 @NgModule({
   imports: [CommonModule],
+  declarations: [
+    UiPersonDisplayComponentComponent
+  ],
 })
 export class PersonsDomainModule {}
 export interface PersonsProps {
