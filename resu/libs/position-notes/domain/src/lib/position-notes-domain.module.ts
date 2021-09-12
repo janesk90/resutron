@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
 import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { UiPositionNotesDisplayComponent } from './ui-position-notes-display/ui-position-notes-display.component';
 
 @NgModule({
   imports: [CommonModule],
+  declarations: [
+    UiPositionNotesDisplayComponent
+  ],
 })
 export class PositionNotesDomainModule {}
 export interface PositionNotesProps {
