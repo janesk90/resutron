@@ -28,4 +28,7 @@ export class PositionNotesDAO extends DAO<PositionNotes> {
     this.entity_name = 'position_notes';
     this.unique_identifier = 'position_notes_id';
   }
+  async getByPositionsId(positions_id: number): Promise<PositionNotes[]> {
+    return this.getBy('positions_id', positions_id);
+  }
 }

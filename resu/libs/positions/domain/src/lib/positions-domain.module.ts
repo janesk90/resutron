@@ -37,4 +37,10 @@ export class PositionsDAO extends DAO<Positions> {
     this.entity_name = 'positions';
     this.unique_identifier = 'positions_id';
   }
+  getByPersonsId(persons_id: number): Promise<Positions[]> {
+    return this.getBy('persons_id', persons_id);
+  }
+  getByCompaniesId(companies_id: number): Promise<Positions[]> {
+    return this.getBy('companies_id', companies_id);
+  }
 }

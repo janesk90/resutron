@@ -59,7 +59,7 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     let query = promisify(this.connection.query).bind(this.connection);
     try {
       let r: T[] = await query({ sql: q, values: [this.entity_name, this.unique_identifier, id] })
-      if (!r) {
+      if (!r || r.length > 1) {
         throw Error("entity not found");
       }
       let p = r[0];
@@ -128,6 +128,18 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
       } catch (x) {
         throw x;
       }
+    }
+    catch (x) {
+      throw x;
+    }
+  }
+
+  async getBy(field: string, id: number): Promise<T[]> {
+    let q = "SELECT * FROM ?? WHERE ?? = ?;"
+    let query = promisify(this.connection.query).bind(this.connection);
+    try {
+      let r: T[] = await query({ sql: q, values: [this.entity_name, field, id] });
+      return r;
     }
     catch (x) {
       throw x;
