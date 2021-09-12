@@ -26,3 +26,8 @@ export class SkillsDAO extends DAO<Skills> {
     this.unique_identifier = 'skills_id';
   }
 }
+export class SkillsValidator {
+  static validateSkillsName(name: string): boolean {
+    return null != name && name.length <= 255;
+  }
+}

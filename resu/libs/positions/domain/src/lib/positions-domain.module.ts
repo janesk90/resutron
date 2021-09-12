@@ -44,3 +44,8 @@ export class PositionsDAO extends DAO<Positions> {
     return this.getBy('companies_id', companies_id);
   }
 }
+export class PositionsValidator {
+  static validatePositionsTitle(title: string): boolean {
+    return null != title && title.length <= 255;
+  }
+}

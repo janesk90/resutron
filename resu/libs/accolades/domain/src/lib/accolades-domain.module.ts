@@ -29,3 +29,8 @@ export class AccoladesDAO extends DAO<Accolades> {
     this.unique_identifier = 'accolades_id';
   }
 }
+export class AccoladesValidator {
+  static validateAccoladesName(name: string) {
+    return null != name && name.length <= 100;
+  }
+}

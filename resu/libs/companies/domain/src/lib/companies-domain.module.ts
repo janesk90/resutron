@@ -26,3 +26,8 @@ export class CompaniesDAO extends DAO<Companies> {
     this.unique_identifier = 'companies_id';
   }
 }
+export class CompaniesValidator {
+  static validateCompaniesName(name: string): boolean {
+    return null != name && name.length <= 255;
+  }
+}
