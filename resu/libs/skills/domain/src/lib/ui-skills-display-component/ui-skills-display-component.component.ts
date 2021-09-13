@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Skills } from '../skills-domain.module';
 
 @Component({
   selector: 'resu-ui-skills-display-component',
@@ -8,7 +7,7 @@ import { Skills } from '../skills-domain.module';
 })
 export class UiSkillsDisplayComponentComponent implements OnInit {
 
-  @Input() skill!: Skills;
+  @Input() skill!: any;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Skills, SkillsDAO } from '@resu/skills/domain';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

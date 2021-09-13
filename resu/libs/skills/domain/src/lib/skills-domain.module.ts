@@ -24,7 +24,7 @@ export class Skills implements SkillsProps {
   }
 }
 export class SkillsDAO extends DAO<Skills> {
-  constructor(connectionConfig: ConnectionOptions) {
+  constructor(connectionConfig: any) {
     super(connectionConfig);
     this.entity_name = 'skills';
     this.unique_identifier = 'skills_id';
@@ -35,3 +35,4 @@ export class SkillsValidator {
     return null != name && name.length <= 255;
   }
 }
+export { UiSkillsDisplayComponentComponent } from './ui-skills-display-component/ui-skills-display-component.component';

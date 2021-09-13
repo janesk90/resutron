@@ -137,6 +137,8 @@
   </details>
 </main>
 -->
-<li *ngFor="let skill of skills">
-  {{skill.skills_name}}
-</li>
+<div class="container">
+<div *ngFor="let skill of skills" class="skill-button-container">
+<button class="btn btn-primary">{{skill.skills_name}}</button>
+</div>
+</div>

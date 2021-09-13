@@ -40,7 +40,7 @@
     "@angular/router": "^12.1.0",
     "@nrwl/angular": "12.7.2",
     "@types/mysql": "^2.15.19",
-    "bootstrap": "^5.1.0",
+    "bootstrap": "^5.1.1",
     "express": "4.17.1",
     "node-mysql": "^0.4.2",
     "rxjs": "~6.6.0",
