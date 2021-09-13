@@ -69,6 +69,13 @@ app.delete('/api/:endpoint/:id', async (req, res) => {
   res.send(x);
 });
 
+// I'm not sure how to separate out the commands and whatnot
+app.get('/api/position_notes/getByPositionId/:id', async (req, res) => {
+  let mdao = new PositionNotesDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByPositionsId(parseInt(req.params.id));
+  res.send(x);
+});
+
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);

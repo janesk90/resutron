@@ -24,9 +24,10 @@ export class AppComponent implements OnInit {
         this.skills = r;
       } 
     );
-    this.httpClient.get("/api/position_notes/").subscribe(
+    for(let n = 1; n < 5; n++)
+    this.httpClient.get("/api/position_notes/getByPositionId/" + n).subscribe(
       (r) => {
-        this.pns = r;
+        this.pns.push(r);
       } 
     );
 

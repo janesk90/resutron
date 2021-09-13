@@ -138,6 +138,6 @@
 </main>
 -->
 <div class="container">
-<resu-ui-many-position-notes-display [positionNotes]=pns></resu-ui-many-position-notes-display>
+<resu-ui-many-position-notes-display *ngFor="let p of pns" [positionNotes]=p></resu-ui-many-position-notes-display>
 <resu-ui-many-skill-display [skills]=skills></resu-ui-many-skill-display>
 </div>
