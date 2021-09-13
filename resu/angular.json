@@ -206,6 +206,31 @@
         }
       }
     },
+    "position-notes-data-access": {
+      "projectType": "library",
+      "root": "libs/position-notes/data-access",
+      "sourceRoot": "libs/position-notes/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/position-notes/data-access"],
+          "options": {
+            "jestConfig": "libs/position-notes/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/position-notes/data-access/src/**/*.ts",
+              "libs/position-notes/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "position-notes-domain": {
       "projectType": "library",
       "root": "libs/position-notes/domain",

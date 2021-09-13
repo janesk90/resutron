@@ -42,6 +42,9 @@
     "persons-domain": {
       "tags": ["domain:persons", "type:domain-logic"]
     },
+    "position-notes-data-access": {
+      "tags": []
+    },
     "position-notes-domain": {
       "tags": ["domain:position-notes", "type:domain-logic"]
     },

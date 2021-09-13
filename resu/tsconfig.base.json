@@ -25,6 +25,9 @@
       "@resu/companies/domain": ["libs/companies/domain/src/index.ts"],
       "@resu/domain": ["libs/domain/src/index.ts"],
       "@resu/persons/domain": ["libs/persons/domain/src/index.ts"],
+      "@resu/position-notes/data-access": [
+        "libs/position-notes/data-access/src/index.ts"
+      ],
       "@resu/position-notes/domain": [
         "libs/position-notes/domain/src/index.ts"
       ],
