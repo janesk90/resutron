@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Skills } from '@resu/skills/domain';
 
 @Component({
   selector: 'resu-ui-skill-display',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-skill-display.component.scss']
 })
 export class UiSkillDisplayComponent implements OnInit {
+  @Input() skill!: Skills;
 
   constructor() { }
 

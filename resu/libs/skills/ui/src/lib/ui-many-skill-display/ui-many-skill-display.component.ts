@@ -12,5 +12,6 @@ export class UiManySkillDisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.skills);
   }
 }

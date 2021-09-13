@@ -28,6 +28,7 @@
       "@resu/position-notes/domain": [
         "libs/position-notes/domain/src/index.ts"
       ],
+      "@resu/position-notes/ui": ["libs/position-notes/ui/src/index.ts"],
       "@resu/positions/domain": ["libs/positions/domain/src/index.ts"],
       "@resu/resume-entity": ["libs/resume-entity/src/index.ts"],
       "@resu/shared/domain": ["libs/shared/domain/src/index.ts"],

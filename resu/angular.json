@@ -247,6 +247,31 @@
         }
       }
     },
+    "position-notes-ui": {
+      "projectType": "library",
+      "root": "libs/position-notes/ui",
+      "sourceRoot": "libs/position-notes/ui/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/position-notes/ui"],
+          "options": {
+            "jestConfig": "libs/position-notes/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/position-notes/ui/src/**/*.ts",
+              "libs/position-notes/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "positions-domain": {
       "projectType": "library",
       "root": "libs/positions/domain",

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DAO } from '@resu/shared/domain';
 import { Skills } from '@resu/skills/domain';
-import { ConnectionOptions } from 'mysql2';
 
 @NgModule({
   imports: [CommonModule],

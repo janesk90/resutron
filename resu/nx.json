@@ -45,6 +45,9 @@
     "position-notes-domain": {
       "tags": ["domain:position-notes", "type:domain-logic"]
     },
+    "position-notes-ui": {
+      "tags": []
+    },
     "positions-domain": {
       "tags": ["domain:positions", "type:domain-logic"]
     },
