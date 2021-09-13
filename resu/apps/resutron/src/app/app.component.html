@@ -138,7 +138,5 @@
 </main>
 -->
 <div class="container">
-<div *ngFor="let skill of skills" class="skill-button-container">
-<button class="btn btn-primary">{{skill.skills_name}}</button>
-</div>
+<resu-ui-many-skills-display [skills]=skills></resu-ui-many-skills-display>
 </div>

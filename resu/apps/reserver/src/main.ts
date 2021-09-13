@@ -13,7 +13,7 @@ import { CompaniesDAO } from '@resu/companies/domain';
 import { PersonsDAO } from '@resu/persons/domain';
 import { PositionsDAO } from '@resu/positions/domain';
 import { PositionNotesDAO } from '@resu/position-notes/domain';
-import { SkillsDAO } from '@resu/skills/domain';
+import { SkillsDAO } from '@resu/skills/data-access';
 import { SkillsToPersonsDAO } from '@resu/skills-to-persons/domain';
 
 let endpointMap = {

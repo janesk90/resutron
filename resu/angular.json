@@ -484,6 +484,31 @@
         }
       }
     },
+    "skills-data-access": {
+      "projectType": "library",
+      "root": "libs/skills/data-access",
+      "sourceRoot": "libs/skills/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/skills/data-access"],
+          "options": {
+            "jestConfig": "libs/skills/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/skills/data-access/src/**/*.ts",
+              "libs/skills/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "skills-domain": {
       "projectType": "library",
       "root": "libs/skills/domain",
