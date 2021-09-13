@@ -590,6 +590,31 @@
           }
         }
       }
+    },
+    "skills-ui": {
+      "projectType": "library",
+      "root": "libs/skills/ui",
+      "sourceRoot": "libs/skills/ui/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/skills/ui"],
+          "options": {
+            "jestConfig": "libs/skills/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/skills/ui/src/**/*.ts",
+              "libs/skills/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

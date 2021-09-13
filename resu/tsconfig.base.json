@@ -35,7 +35,8 @@
         "libs/skills-to-persons/domain/src/index.ts"
       ],
       "@resu/skills/data-access": ["libs/skills/data-access/src/index.ts"],
-      "@resu/skills/domain": ["libs/skills/domain/src/index.ts"]
+      "@resu/skills/domain": ["libs/skills/domain/src/index.ts"],
+      "@resu/skills/ui": ["libs/skills/ui/src/index.ts"]
     },
     "types": ["node"],
     "typeRoots": ["../node_modules/@types"]
