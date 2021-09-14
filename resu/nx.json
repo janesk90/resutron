@@ -36,8 +36,14 @@
     "accolades-to-persons-domain": {
       "tags": ["domain:accolades-to-persons", "type:domain-logic"]
     },
+    "companies-data-access": {
+      "tags": []
+    },
     "companies-domain": {
       "tags": ["domain:companies", "type:domain-logic"]
+    },
+    "companies-ui": {
+      "tags": []
     },
     "persons-domain": {
       "tags": ["domain:persons", "type:domain-logic"]
@@ -51,8 +57,14 @@
     "position-notes-ui": {
       "tags": []
     },
+    "positions-data-access": {
+      "tags": []
+    },
     "positions-domain": {
       "tags": ["domain:positions", "type:domain-logic"]
+    },
+    "positions-ui": {
+      "tags": []
     },
     "reserver": {
       "tags": []

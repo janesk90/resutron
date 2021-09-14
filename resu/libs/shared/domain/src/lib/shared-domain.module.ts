@@ -68,6 +68,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
     catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 
@@ -83,6 +85,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
     catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 
@@ -94,6 +98,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
       return this.getOne(r.insertId);
     } catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 
@@ -110,6 +116,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
       }
     } catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 
@@ -132,6 +140,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
     catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 
@@ -144,6 +154,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
     catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 

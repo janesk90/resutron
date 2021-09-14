@@ -22,7 +22,11 @@
         "libs/accolades-to-persons/domain/src/index.ts"
       ],
       "@resu/accolades/domain": ["libs/accolades/domain/src/index.ts"],
+      "@resu/companies/data-access": [
+        "libs/companies/data-access/src/index.ts"
+      ],
       "@resu/companies/domain": ["libs/companies/domain/src/index.ts"],
+      "@resu/companies/ui": ["libs/companies/ui/src/index.ts"],
       "@resu/domain": ["libs/domain/src/index.ts"],
       "@resu/persons/domain": ["libs/persons/domain/src/index.ts"],
       "@resu/position-notes/data-access": [
@@ -32,7 +36,11 @@
         "libs/position-notes/domain/src/index.ts"
       ],
       "@resu/position-notes/ui": ["libs/position-notes/ui/src/index.ts"],
+      "@resu/positions/data-access": [
+        "libs/positions/data-access/src/index.ts"
+      ],
       "@resu/positions/domain": ["libs/positions/domain/src/index.ts"],
+      "@resu/positions/ui": ["libs/positions/ui/src/index.ts"],
       "@resu/resume-entity": ["libs/resume-entity/src/index.ts"],
       "@resu/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@resu/skills-to-persons/domain": [

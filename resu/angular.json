@@ -124,6 +124,31 @@
         }
       }
     },
+    "companies-data-access": {
+      "projectType": "library",
+      "root": "libs/companies/data-access",
+      "sourceRoot": "libs/companies/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/companies/data-access"],
+          "options": {
+            "jestConfig": "libs/companies/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/companies/data-access/src/**/*.ts",
+              "libs/companies/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "companies-domain": {
       "projectType": "library",
       "root": "libs/companies/domain",
@@ -160,6 +185,31 @@
             "lintFilePatterns": [
               "libs/companies/domain/src/**/*.ts",
               "libs/companies/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "companies-ui": {
+      "projectType": "library",
+      "root": "libs/companies/ui",
+      "sourceRoot": "libs/companies/ui/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/companies/ui"],
+          "options": {
+            "jestConfig": "libs/companies/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/companies/ui/src/**/*.ts",
+              "libs/companies/ui/src/**/*.html"
             ]
           }
         }
@@ -297,6 +347,31 @@
         }
       }
     },
+    "positions-data-access": {
+      "projectType": "library",
+      "root": "libs/positions/data-access",
+      "sourceRoot": "libs/positions/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/positions/data-access"],
+          "options": {
+            "jestConfig": "libs/positions/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/positions/data-access/src/**/*.ts",
+              "libs/positions/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "positions-domain": {
       "projectType": "library",
       "root": "libs/positions/domain",
@@ -333,6 +408,31 @@
             "lintFilePatterns": [
               "libs/positions/domain/src/**/*.ts",
               "libs/positions/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "positions-ui": {
+      "projectType": "library",
+      "root": "libs/positions/ui",
+      "sourceRoot": "libs/positions/ui/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/positions/ui"],
+          "options": {
+            "jestConfig": "libs/positions/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/positions/ui/src/**/*.ts",
+              "libs/positions/ui/src/**/*.html"
             ]
           }
         }

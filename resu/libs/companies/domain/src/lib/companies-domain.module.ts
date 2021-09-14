@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConnectionOptions } from 'mysql2';
-import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -17,13 +15,6 @@ export class Companies implements CompaniesProps {
   constructor(p: CompaniesProps) {
     this.companies_id = p.companies_id;
     this.companies_name = p.companies_name;
-  }
-}
-export class CompaniesDAO extends DAO<Companies> {
-  constructor(connectionConfig: ConnectionOptions) {
-    super(connectionConfig);
-    this.entity_name = 'companies';
-    this.unique_identifier = 'companies_id';
   }
 }
 export class CompaniesValidator {

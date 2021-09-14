@@ -31,19 +31,6 @@ export class Positions implements PositionsProps {
     this.persons_id = p.persons_id;
   }
 }
-export class PositionsDAO extends DAO<Positions> {
-  constructor(connectionConfig: ConnectionOptions) {
-    super(connectionConfig);
-    this.entity_name = 'positions';
-    this.unique_identifier = 'positions_id';
-  }
-  getByPersonsId(persons_id: number): Promise<Positions[]> {
-    return this.getBy('persons_id', persons_id);
-  }
-  getByCompaniesId(companies_id: number): Promise<Positions[]> {
-    return this.getBy('companies_id', companies_id);
-  }
-}
 export class PositionsValidator {
   static validatePositionsTitle(title: string): boolean {
     return null != title && title.length <= 255;

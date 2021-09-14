@@ -1,6 +1,8 @@
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
+ * 
+ * Why am I creating a new DAO every time someone makes an API call?
  */
 
  var bodyParser = require('body-parser')
@@ -9,9 +11,9 @@ import * as express from 'express';
 import { AccoladeTypesDAO } from '@resu/accolade-types/domain';
 import { AccoladesDAO } from '@resu/accolades/domain';
 import { AccoladesToPersonsDAO } from '@resu/accolades-to-persons/domain';
-import { CompaniesDAO } from '@resu/companies/domain';
+import { CompaniesDAO } from '@resu/companies/data-access';
 import { PersonsDAO } from '@resu/persons/domain';
-import { PositionsDAO } from '@resu/positions/domain';
+import { PositionsDAO } from '@resu/positions/data-access';
 import { PositionNotesDAO } from '@resu/position-notes/data-access';
 import { SkillsDAO } from '@resu/skills/data-access';
 import { SkillsToPersonsDAO } from '@resu/skills-to-persons/domain';
@@ -69,10 +71,22 @@ app.delete('/api/:endpoint/:id', async (req, res) => {
   res.send(x);
 });
 
-// I'm not sure how to separate out the commands and whatnot
+// position_notes
 app.get('/api/position_notes/getByPositionId/:id', async (req, res) => {
   let mdao = new PositionNotesDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
   let x = await mdao.getByPositionsId(parseInt(req.params.id));
+  res.send(x);
+});
+
+// positions
+app.get('/api/positions/getByPersonId/:id', async (req, res) => {
+  let mdao = new PositionsDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByPersonsId(parseInt(req.params.id));
+  res.send(x);
+});
+app.get('/api/positions/getByCompanyId/:id', async (req, res) => {
+  let mdao = new PositionsDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByCompaniesId(parseInt(req.params.id));
   res.send(x);
 });
 
