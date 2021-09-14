@@ -2,7 +2,9 @@
     <div class="many-skills-header">
         <h5>Responsibilities</h5>
     </div>
-<div *ngFor="let pn of positionNotes" class="position-notes-container">
-    <resu-ui-position-notes-display [positionNote]=pn></resu-ui-position-notes-display>
-</div>
+    <div class="list-group">
+        <li *ngFor="let pn of positionNotes" class="position-notes-container">
+            <resu-ui-position-notes-display [positionNote]=pn></resu-ui-position-notes-display>
+        </li>
+    </div>
 </div>
