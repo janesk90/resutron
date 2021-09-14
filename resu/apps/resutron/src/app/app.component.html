@@ -137,27 +137,44 @@
   </details>
 </main>
 -->
-<div class="container">
+<div class="container resume-container">
   <div *ngFor="let po of res.positions" class="row">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <resu-ui-position-display [position]=po></resu-ui-position-display>
-        </div>
-        <div class="col-md-3">
-          <resu-ui-company-display [company]=po.company></resu-ui-company-display>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <resu-ui-many-position-notes-display [positionNotes]=po.position_notes></resu-ui-many-position-notes-display>
+    <div class="col-md-12">
+      <div class="card job-card">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+                <resu-ui-position-display [position]=po></resu-ui-position-display>
+              </div>
+              <div class="col-md-3">
+                <resu-ui-company-display [company]=po.company></resu-ui-company-display>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <resu-ui-many-position-notes-display [positionNotes]=po.position_notes>
+                </resu-ui-many-position-notes-display>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row skills-row">
     <div class="col-md-12">
-      <resu-ui-many-skill-display [skills]=res.skills></resu-ui-many-skill-display>
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <resu-ui-many-skill-display [skills]=res.skills></resu-ui-many-skill-display>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
