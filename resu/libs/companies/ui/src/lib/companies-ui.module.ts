@@ -11,4 +11,4 @@ import { UiCompanyDisplayComponent } from './ui-company-display/ui-company-displ
     UiCompanyDisplayComponent
   ]
 })
-export class CompaniesUiModule {}
+export class CompaniesUiModule {} 

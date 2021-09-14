@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         console.log(this.res);
       }
     );
-    this.httpClient.get("/api/skills/").subscribe(
+    this.httpClient.get("/api/skills/getByPersonId/1").subscribe(
       (skills) => {
         let skCo = [...(skills as any[])];
         skCo.sort(function (a, b) {

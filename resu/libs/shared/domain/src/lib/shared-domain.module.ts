@@ -52,6 +52,8 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
     catch (x) {
       throw x;
+    } finally {
+      this.connection.end();
     }
   }
 

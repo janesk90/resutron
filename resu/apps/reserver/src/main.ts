@@ -90,6 +90,13 @@ app.get('/api/positions/getByCompanyId/:id', async (req, res) => {
   res.send(x);
 });
 
+// skills
+app.get('/api/skills/getByPersonId/:id', async (req, res) => {
+  let mdao = new SkillsDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByPersonId(parseInt(req.params.id));
+  res.send(x);
+});
+
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
