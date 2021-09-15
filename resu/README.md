@@ -2,7 +2,7 @@
 
 # Resu
 
-This project was generated using [Nx](https://nx.dev).
+This project was generated using [Nx](https://nx.dev). I've got a demo for it at https://www.youtube.com/watch?v=8mb4rMvzoj0
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
