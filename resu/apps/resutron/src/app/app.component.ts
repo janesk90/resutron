@@ -42,7 +42,11 @@ export class AppComponent implements OnInit {
         });
         this.res.skills = skCo;
       }
-    )
+    );
+    this.httpClient.get("/api/persons/1").subscribe(
+      (person) => {
+        this.res.person = person;
+      });
     this.httpClient.get("/api/accolades/getByPersonIdAndAccoladeTypeIds/1/2").subscribe(
       (accolades) => {
         this.res.education = accolades;

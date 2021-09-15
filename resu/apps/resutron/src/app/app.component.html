@@ -1,5 +1,8 @@
 <div class="container resume-container">
   <div class="education-row">
+    <h2>{{ res.person.persons_firstname + " " + res.person.persons_middlename + " " + res.person.persons_lastname }}</h2>
+  </div>
+  <div class="education-row">
     <resu-ui-many-accolade-display [accolades]=res.education title="Education"></resu-ui-many-accolade-display>
   </div>
   <div *ngFor="let po of res.positions" class="row">
