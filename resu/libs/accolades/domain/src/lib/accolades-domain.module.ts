@@ -22,13 +22,6 @@ export class Accolades implements AccoladesProps {
     this.accolade_types_id = p.accolade_types_id;
   }
 }
-export class AccoladesDAO extends DAO<Accolades> {
-  constructor(connectionConfig: ConnectionOptions) {
-    super(connectionConfig);
-    this.entity_name = 'accolades';
-    this.unique_identifier = 'accolades_id';
-  }
-}
 export class AccoladesValidator {
   static validateAccoladesName(name: string) {
     return null != name && name.length <= 100;

@@ -1,4 +1,7 @@
 <div class="container resume-container">
+  <div class="education-row">
+    <resu-ui-many-accolade-display [accolades]=res.education title="Education"></resu-ui-many-accolade-display>
+  </div>
   <div *ngFor="let po of res.positions" class="row">
     <div class="col-md-12">
       <div class="card job-card">
@@ -36,5 +39,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="accolades-row">
+    <resu-ui-many-accolade-display [accolades]=res.accolades title="Accolades"></resu-ui-many-accolade-display>
   </div>
 </div>

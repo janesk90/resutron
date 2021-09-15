@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     this.httpClient.get("/api/positions/getByPersonId/1").subscribe(
       (positions) => {
         let positionsCo = (positions as any[]);
-        for(let i = 0; i < positionsCo.length; i++) {
+        for (let i = 0; i < positionsCo.length; i++) {
           this.httpClient.get("/api/position_notes/getByPositionId/" + positionsCo[i].positions_id).subscribe(
             (position_notes) => {
               let pnCo = (position_notes as any[]);
@@ -39,9 +39,17 @@ export class AppComponent implements OnInit {
         let skCo = [...(skills as any[])];
         skCo.sort(function (a, b) {
           return a.skills_name.toLowerCase().localeCompare(b.skills_name.toLowerCase());
-      });
+        });
         this.res.skills = skCo;
       }
     )
-  }
+    this.httpClient.get("/api/accolades/getByPersonIdAndAccoladeTypeIds/1/2").subscribe(
+      (accolades) => {
+        this.res.education = accolades;
+      });
+    this.httpClient.get("/api/accolades/getByPersonIdAndAccoladeTypeIds/1/3,4").subscribe(
+      (accolades) => {
+        this.res.accolades = accolades;
+      });
+  };
 }

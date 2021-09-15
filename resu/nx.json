@@ -30,11 +30,17 @@
     "accolade-types-domain": {
       "tags": ["domain:accolade-types", "type:domain-logic"]
     },
+    "accolades-data-access": {
+      "tags": []
+    },
     "accolades-domain": {
       "tags": ["domain:accolades", "type:domain-logic"]
     },
     "accolades-to-persons-domain": {
       "tags": ["domain:accolades-to-persons", "type:domain-logic"]
+    },
+    "accolades-ui": {
+      "tags": []
     },
     "companies-data-access": {
       "tags": []

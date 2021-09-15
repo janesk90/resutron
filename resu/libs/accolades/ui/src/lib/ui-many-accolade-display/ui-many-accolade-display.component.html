@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{title}}</h4>
+                </div>
+            </div>
+            <div class="row" *ngFor="let a of accolades">
+                <div class="col-md-12">
+                    <li>
+                        <resu-ui-accolade-display [accolade]=a style="display:inline-block"></resu-ui-accolade-display>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

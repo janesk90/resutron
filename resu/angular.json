@@ -42,6 +42,31 @@
         }
       }
     },
+    "accolades-data-access": {
+      "projectType": "library",
+      "root": "libs/accolades/data-access",
+      "sourceRoot": "libs/accolades/data-access/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accolades/data-access"],
+          "options": {
+            "jestConfig": "libs/accolades/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accolades/data-access/src/**/*.ts",
+              "libs/accolades/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "accolades-domain": {
       "projectType": "library",
       "root": "libs/accolades/domain",
@@ -119,6 +144,31 @@
             "lintFilePatterns": [
               "libs/accolades-to-persons/domain/src/**/*.ts",
               "libs/accolades-to-persons/domain/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "accolades-ui": {
+      "projectType": "library",
+      "root": "libs/accolades/ui",
+      "sourceRoot": "libs/accolades/ui/src",
+      "prefix": "resu",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accolades/ui"],
+          "options": {
+            "jestConfig": "libs/accolades/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accolades/ui/src/**/*.ts",
+              "libs/accolades/ui/src/**/*.html"
             ]
           }
         }

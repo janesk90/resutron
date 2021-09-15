@@ -9,7 +9,7 @@
 
 import * as express from 'express';
 import { AccoladeTypesDAO } from '@resu/accolade-types/domain';
-import { AccoladesDAO } from '@resu/accolades/domain';
+import { AccoladesDAO } from '@resu/accolades/data-access';
 import { AccoladesToPersonsDAO } from '@resu/accolades-to-persons/domain';
 import { CompaniesDAO } from '@resu/companies/data-access';
 import { PersonsDAO } from '@resu/persons/domain';
@@ -94,6 +94,28 @@ app.get('/api/positions/getByCompanyId/:id', async (req, res) => {
 app.get('/api/skills/getByPersonId/:id', async (req, res) => {
   let mdao = new SkillsDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
   let x = await mdao.getByPersonId(parseInt(req.params.id));
+  res.send(x);
+});
+
+// accolades
+app.get('/api/accolades/getByPersonId/:id', async (req, res) => {
+  let mdao = new AccoladesDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByPersonId(parseInt(req.params.id));
+  res.send(x);
+});
+app.get('/api/accolades/getByAccoladeTypeId/:id', async (req, res) => {
+  let mdao = new AccoladesDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let x = await mdao.getByAccoladeTypeId(parseInt(req.params.id));
+  res.send(x);
+});
+app.get('/api/accolades/getByPersonIdAndAccoladeTypeIds/:person_id/:accolade_type_ids', async (req, res) => {
+  let mdao = new AccoladesDAO({ host: 'localhost', user: 'root', password: 'root', database: 'kr' });
+  let atids = req.params.accolade_type_ids.split(",");
+  let atidnos: number[] = [];
+  for(let a of atids) {
+    atidnos.push(parseInt(a))
+  }
+  let x = await mdao.getByPersonIdAndAccoladeTypeIds(parseInt(req.params.person_id), atidnos);
   res.send(x);
 });
 

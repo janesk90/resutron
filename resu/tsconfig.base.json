@@ -21,7 +21,11 @@
       "@resu/accolades-to-persons/domain": [
         "libs/accolades-to-persons/domain/src/index.ts"
       ],
+      "@resu/accolades/data-access": [
+        "libs/accolades/data-access/src/index.ts"
+      ],
       "@resu/accolades/domain": ["libs/accolades/domain/src/index.ts"],
+      "@resu/accolades/ui": ["libs/accolades/ui/src/index.ts"],
       "@resu/companies/data-access": [
         "libs/companies/data-access/src/index.ts"
       ],
