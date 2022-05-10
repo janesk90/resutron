@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import { DAO } from  '../../../../shared/domain/src/lib/shared-domain.module';
+import { DAO, EntityProps } from  '../../../../shared/domain/src/lib/shared-domain.module';
 import { UiPersonDisplayComponentComponent } from './ui-person-display-component/ui-person-display-component.component';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { UiPersonDisplayComponentComponent } from './ui-person-display-component
   ],
 })
 export class PersonsDomainModule {}
-export interface PersonsProps {
+export interface PersonsProps extends EntityProps {
   readonly persons_id?: number;
   persons_firstname: string;
   persons_middlename?: string;

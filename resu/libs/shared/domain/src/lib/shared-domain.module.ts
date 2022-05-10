@@ -9,28 +9,28 @@ import { promisify } from 'util';
 })
 export class SharedDomainModule {}
 export interface EntityProps { }
-export interface DataAccessor<T extends EntityProps> {
+export interface DataAccessor<EntityProps> {
 
-  getAll(): Promise<T[]>;
+  getAll(): Promise<EntityProps[]>;
 
-  getOne(id: number): Promise<T>;
+  getOne(id: number): Promise<EntityProps>;
 
-  getMany(ids: number[]): Promise<T[]>;
+  getMany(ids: number[]): Promise<EntityProps[]>;
 
-  createOne(e: T): Promise<T>;
+  createOne(e: EntityProps): Promise<EntityProps>;
 
   // createMany(es: T[]): Promise<T[]>;
 
-  updateOne(e: T): Promise<T>;
+  updateOne(e: EntityProps): Promise<EntityProps>;
 
   //updateMany(es: T[]): Promise<T[]>;
 
-  removeOne(id: number): Promise<T>;
+  removeOne(id: number): Promise<EntityProps>;
 
   //removeMany(ids: number[]): Promise<T[]>;
 
 }
-export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
+export abstract class DAO<EntityProps> implements DataAccessor<EntityProps> {
   connectionConfig: ConnectionOptions;
   connection: Connection;
   entity_name!: string;
@@ -40,11 +40,11 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     this.connection = createConnection(connectionConfig);
   }
 
-  async getAll(): Promise<T[]> {
+  async getAll(): Promise<EntityProps[]> {
     let q = "SELECT * FROM ??;";
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T[] = await query({ sql: q, values: [this.entity_name] });
+      let r: EntityProps[] = await query({ sql: q, values: [this.entity_name] });
       if (!r) {
         throw Error("entity not found");
       }
@@ -57,11 +57,11 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async getOne(id: number): Promise<T> {
+  async getOne(id: number): Promise<EntityProps> {
     let q = "SELECT * FROM ?? WHERE ?? = ?;";
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T[] = await query({ sql: q, values: [this.entity_name, this.unique_identifier, id] })
+      let r: EntityProps[] = await query({ sql: q, values: [this.entity_name, this.unique_identifier, id] })
       if (!r || r.length > 1) {
         throw Error("entity not found");
       }
@@ -75,11 +75,11 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async getMany(ids: number[]): Promise<T[]> {
+  async getMany(ids: number[]): Promise<EntityProps[]> {
     let q = "SELECT * FROM ?? WHERE ?? IN ?;";
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T[] = await query({ sql: q, values: [this.entity_name, this.unique_identifier, ids] })
+      let r: EntityProps[] = await query({ sql: q, values: [this.entity_name, this.unique_identifier, ids] })
       if (!r) {
         throw Error("entity not found");
       }
@@ -92,7 +92,7 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async createOne(e: T): Promise<T> {
+  async createOne(e: EntityProps): Promise<EntityProps> {
     let q = "INSERT INTO ?? SET ?;"
     let query = promisify(this.connection.query).bind(this.connection);
     try {
@@ -105,7 +105,7 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async updateOne(e: T): Promise<T> {
+  async updateOne(e: EntityProps): Promise<EntityProps> {
     let q = "UPDATE ?? SET ? WHERE ?? = ?;"
     let query = promisify(this.connection.query).bind(this.connection);
     try {
@@ -123,11 +123,11 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async removeOne(id: number): Promise<T> {
+  async removeOne(id: number): Promise<EntityProps> {
     let q = "DELETE FROM ?? WHERE ?? = ?;"
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T = await this.getOne(id);
+      let r: EntityProps = await this.getOne(id);
       try {
         let x = await query({ sql: q, values: [this.entity_name, this.unique_identifier, id] });
         if (x.affectedRows == 1) {
@@ -147,11 +147,11 @@ export abstract class DAO<T extends EntityProps> implements DataAccessor<T> {
     }
   }
 
-  async getBy(field: string, id: number): Promise<T[]> {
+  async getBy(field: string, id: number): Promise<EntityProps[]> {
     let q = "SELECT * FROM ?? WHERE ?? = ?;"
     let query = promisify(this.connection.query).bind(this.connection);
     try {
-      let r: T[] = await query({ sql: q, values: [this.entity_name, field, id] });
+      let r: EntityProps[] = await query({ sql: q, values: [this.entity_name, field, id] });
       return r;
     }
     catch (x) {

@@ -1,0 +1,11 @@
+pipeline {
+	agent { label 'wind' }
+	stages {
+		stage ('SonarQube Analysis') {
+			def scannerHome = tool 'SonarScanner 2.14';
+			withSonarQubeEnv(installationName: 'sq1') {
+			  sh "${scannerHome}/bin/sonar-scanner"
+			}
+		}
+	}
+}

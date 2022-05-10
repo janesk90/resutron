@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import {DAO} from '../../../../shared/domain/src/lib/shared-domain.module';
+import {DAO, EntityProps} from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],
 })
 export class PositionsDomainModule {}
-export interface PositionsProps {
+export interface PositionsProps extends EntityProps {
   readonly positions_id?: number;
   positions_title: string;
   positions_start: Date;

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { DAO, EntityProps } from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],
 })
 export class SkillsToPersonsDomainModule {}
-export interface SkillsToPersonsProps {
+export interface SkillsToPersonsProps extends EntityProps {
   readonly skills_to_persons_id?: number;
   skills_id: number;
   persons_id: number;

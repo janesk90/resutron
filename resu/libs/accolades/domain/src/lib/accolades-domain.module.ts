@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { DAO, EntityProps } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { NumberValueAccessor } from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule],
 })
 export class AccoladesDomainModule {}
-export interface AccoladesProps {
+export interface AccoladesProps extends EntityProps {
   readonly accolades_id?: number;
   accolades_name: string;
   accolade_types_id: number;
@@ -26,4 +27,16 @@ export class AccoladesValidator {
   static validateAccoladesName(name: string) {
     return null != name && name.length <= 100;
   }
+}
+export class C {
+  f?: string;
+  C() {
+    
+  }
+}
+// class D extends C {}
+// class X<C> {}
+// class Y<D> extends X<C extends {a:"s"}> {};
+export interface IC extends C {
+
 }

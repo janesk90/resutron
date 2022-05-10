@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { DAO, EntityProps } from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],
 })
 export class AccoladeTypesDomainModule {}
-export interface AccoladeTypesProps {
+export interface AccoladeTypesProps  extends EntityProps {
   readonly accolade_types_id?: number;
   accolade_types_name: string;
 }

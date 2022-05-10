@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConnectionOptions } from 'mysql2';
-import { DAO } from '../../../../shared/domain/src/lib/shared-domain.module';
+import { DAO, EntityProps } from '../../../../shared/domain/src/lib/shared-domain.module';
 import { UiPositionNotesDisplayComponent } from './ui-position-notes-display/ui-position-notes-display.component';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { UiPositionNotesDisplayComponent } from './ui-position-notes-display/ui-
   ],
 })
 export class PositionNotesDomainModule {}
-export interface PositionNotesProps {
+export interface PositionNotesProps  extends EntityProps {
   readonly position_notes_id?: number;
   position_notes_text: string;
   positions_id: number;

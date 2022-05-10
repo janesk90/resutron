@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EntityProps } from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],
 })
 export class CompaniesDomainModule {}
-export interface CompaniesProps {
+export interface CompaniesProps extends EntityProps {
   readonly companies_id?: number;
   companies_name: string;
 }
