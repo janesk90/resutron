@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConnectionOptions } from 'mysql2';
-import {DAO, EntityProps} from '../../../../shared/domain/src/lib/shared-domain.module';
+import {EntityProps} from '../../../../shared/domain/src/lib/shared-domain.module';
 
 @NgModule({
   imports: [CommonModule],

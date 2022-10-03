@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CompaniesUiModule } from '../companies-ui.module';
 import { Companies } from '@resu/companies/domain';
 
 @Component({
